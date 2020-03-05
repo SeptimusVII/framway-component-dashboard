@@ -1,0 +1,40 @@
+<div class="flex-alignitems--center-justifycontent--spacebetween">
+	<h2>Infos</h2>
+	<div class=""><a target="_blank" href="https://framway.webexmachina.fr">Website</a> - <a target="_blank" href="https://github.com/SeptimusVII/framway">Github</a></div>
+</div>
+<table class="table table-bordered block-std m-bottom-x2">
+	<tr>
+		<td class="ft-i">Version</td>
+		<td class="ft-b">{{app.version}}</td>
+	</tr>
+	<tr>
+		<td class="ft-i">Debug mode</td>
+		<td class="ft-b">{{app.debug}}</td>
+	</tr>
+	<tr>
+		<td class="ft-i">Font Awesome</td>
+		<td class="ft-b">{{app.useFA}}</td>
+	</tr>
+	<tr>
+		<td class="ft-i">Toastr</td>
+		<td class="ft-b">{{app.useToastr}}</td>
+	</tr>
+	<tr>
+		<td><span class="ft-i">Component(s) loaded</span> <span class="fl-right ft-b">[{{app.components.length}}]</span></td>
+		<td>
+			{{{components}}}
+		</td>
+	</tr>
+	<tr>
+		<td><span class="ft-i">Theme(s) loaded</span> <span class="fl-right ft-b">[{{app.themes.length}}]</span></td>
+		<td>
+			{{{themes}}}
+		</td>
+	</tr>
+</table>
+<h2>Config</h2>
+<div class="block-std">
+<div class="row">
+	{{{config}}}
+</div>
+</div>
