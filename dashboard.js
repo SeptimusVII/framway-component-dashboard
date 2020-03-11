@@ -11,11 +11,14 @@ Dashboard.prototype.onCreate = function(){
 
 	var strComponents = '';
 	for(var component of app.components)
-		strComponents += '<li>'+utils.getClassName(component)+'</li>';
+		if (app.components.includes('factory') && !app[utils.getClassName(component)].factoryExclude)
+			strComponents += '<li><a href="'+window.location.origin+window.location.pathname+'?framnav=factory&component='+component+'">'+utils.getClassName(component)+'</a></li>';
+		else
+			strComponents += '<li>'+utils.getClassName(component)+'</li>';
+
 	var strThemes = '';
 	for(var theme of app.themes)
 		strThemes += '<li>'+theme+'</li>';
-
 
 	var $body = $(require('mustache-loader!html-loader?interpolate!./templates/index.html')({
 		app: app,
