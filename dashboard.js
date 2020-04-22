@@ -1,5 +1,5 @@
-var Dashboard = module.exports = function(app){
-	Dashboard = Object.getPrototypeOf(app).Dashboard = new app.Component("dashboard");
+module.exports = function(app){
+	var Dashboard = Object.getPrototypeOf(app).Dashboard = new app.Component("dashboard");
 	// Dashboard.debug = true;
 	Dashboard.createdAt      = "2.0.0";
 	Dashboard.lastUpdate     = "2.0.0";
