@@ -40,7 +40,7 @@ module.exports = function(app){
 			if(typeof value != 'object'){
 				var str = '<span class="ellipsis" title="'+key+'">'+key+' :</span><span>'+value+'</span>';
 				if(value.indexOf('#') != -1)
-					str = '<span class="ellipsis" title="'+key+'">'+key+' :</span><span class="bd-bottom-'+app.utils.getObjKeyByValue(app.styles.colors, value)+'-5 p-bottom-0">'+value+'</span>';
+					str = '<span class="ellipsis" title="'+key+'">'+key+' :</span><span class="p-bottom-0" style="border-bottom: 5px solid '+value+'; ">'+value+'</span>';
 				rows += require('mustache-loader!html-loader?interpolate!./templates/config_row.html')({str: str});
 			}
 			else
