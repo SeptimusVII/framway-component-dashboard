@@ -42,12 +42,15 @@ module.exports = function(app){
 				if(value.indexOf('#') != -1)
 					str = '<span class="ellipsis" title="'+key+'">'+key+' :</span><span class="p-bottom-0" style="border-bottom: 5px solid '+value+'; ">'+value+'</span>';
 				rows += require('mustache-loader!html-loader?interpolate!./templates/config_row.html')({str: str});
+			} else if (Array.isArray(value)) {
+				var str = '<span class="ellipsis" title="'+key+'">'+key+' :</span><span>'+String(value).replace(/,/g,'<br>' )+'</span>';
+				rows += require('mustache-loader!html-loader?interpolate!./templates/config_row.html')({str: str});
 			}
-			else
-				arrObjects[key] = value;
-		});
-		$.each(arrObjects,function(key,value){
-			htmlStack += getConfigStr(value, key);
+			else{
+				if (title!='global')
+					key = title+'-'+key;
+				htmlStack += getConfigStr(value, key);
+			}
 		});
 		return template.render({title: title},{rows: rows})+htmlStack; // return the initial template filled with his rows PLUS the stack we get by processing recursively the config
 	};
