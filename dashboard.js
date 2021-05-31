@@ -28,7 +28,14 @@ module.exports = function(app){
 			config: getConfigStr(app.styles, 'global')
 		}));
 
+
 		dashboard.$el.append($body);
+		dashboard.$el.find('.copy').on('click',function(){
+			// console.log('copy');
+			var elem = $(this).get(0);
+	     	if(app.utils.copyToClipboard(elem))
+	        	notif_fade.success('Copied to clipboard !');
+		});
 	}
 
 	function getConfigStr(obj,title = ''){

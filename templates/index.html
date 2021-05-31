@@ -38,3 +38,82 @@
 	{{{config}}}
 </div>
 </div>
+<h2>Memento</h2>
+<div class="block-std">
+	<h3>Framway commands</h3>
+	<table class="table table-bordered block-std m-bottom-x2 ">
+		<tr>
+			<td>
+				<span class="tag copy">npm run framway</span><br>
+				<span class="tag copy">npm run framway displayConfig</span>
+			</td>
+			<td>Displays framway's current config (themes and components)</td>
+		</tr>
+		<tr>
+			<td><span class="tag copy">npm run framway init</span></td>
+			<td>Initialize framway's structure and folders. Automatically download themes and components set in config file. Set the framway in a production state</td>
+		</tr>
+		<tr>
+			<td><span class="tag copy">npm run framway toggleFiles [true/false]</span></td>
+			<td>Toggle the git tracking state of a selection of files which need to be ignored in a production environment.<br><span class="tag">true</span>= files ignored (default)<br><span class="tag">false</span>= files not ignored</td>
+		</tr>
+	</table>
+	<h3>Theme commands</h3>
+	<table class="table table-bordered block-std m-bottom-x2 ">
+		<tr>
+			<td>
+				<span class="tag copy">npm run theme [name]</span><br>
+				<span class="tag copy">npm run theme [name] create [createGit]</span>
+			</td>
+			<td>
+				Create a theme folder with placeholder files. <span class="tag">name</span> is required.<br>
+				<span class="tag">createGit</span> is a boolean defining if we want to create a git repository (or not) to the current user registered account (default false)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class="tag copy">npm run theme [name] delete</span>
+			</td>
+			<td>
+				Remove the theme folder. Copy to the user clipboard a command to delete the theme's git repository if wanted. 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class="tag copy">npm run theme [name] get</span>
+			</td>
+			<td>
+				Install an existing theme from the current user's git account. If already installed, the theme is updated, replacing all not committed changes
+			</td>
+		</tr>
+	</table>
+	<h3>Component commands</h3>
+	<table class="table table-bordered block-std">
+		<tr>
+			<td>
+				<span class="tag copy">npm run component [name]</span><br>
+				<span class="tag copy">npm run component [name] create [createGit]</span>
+			</td>
+			<td>
+				Create a component folder with placeholder files. <span class="tag">name</span> is required.<br>
+				<span class="tag">createGit</span> is a boolean defining if we want to create a git repository (or not) to the current user registered account (default false)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class="tag copy">npm run component [name] delete</span>
+			</td>
+			<td>
+				Remove the component folder. Copy to the user clipboard a command to delete the component's git repository if wanted. 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class="tag copy">npm run component [name] get</span>
+			</td>
+			<td>
+				Install an existing component from the current user's git account. If already installed, the component is updated, replacing all not committed changes
+			</td>
+		</tr>
+	</table>
+</div>
