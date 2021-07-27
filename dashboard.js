@@ -36,6 +36,21 @@ module.exports = function(app){
 	     	if(app.utils.copyToClipboard(elem))
 	        	notif_fade.success('Copied to clipboard !');
 		});
+
+		if (typeof app.updateUrlNavigation != 'undefined') {
+			$body.find('.tabs__nav button').on('click',function(){
+				if (dashboard.$el.parent('.tab').hasClass('active'))
+					setTimeout(function(){app.updateUrlNavigation(dashboard.getNavState());})
+			});
+		}
+	}
+
+	Dashboard.prototype.getNavState = function(){
+		var dashboard = this;
+		return {
+			framnav: 'dashboard',
+			panel: dashboard.$el.find('.tabs__nav button[data-panel].active').attr('data-panel') || '',
+		}
 	}
 
 	function getConfigStr(obj,title = ''){
