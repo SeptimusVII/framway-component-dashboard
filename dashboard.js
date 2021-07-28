@@ -40,7 +40,10 @@ module.exports = function(app){
 		if (typeof app.updateUrlNavigation != 'undefined') {
 			$body.find('.tabs__nav button').on('click',function(){
 				if (dashboard.$el.parent('.tab').hasClass('active'))
-					setTimeout(function(){app.updateUrlNavigation(dashboard.getNavState());})
+					setTimeout(function(){
+						if(app.debug) console.log('app.updateUrlNavigation from dashboard');
+						app.updateUrlNavigation(dashboard.getNavState());
+					})
 			});
 		}
 	}
