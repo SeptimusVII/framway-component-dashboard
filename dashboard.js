@@ -2,7 +2,7 @@ module.exports = function(app){
 	var Dashboard = Object.getPrototypeOf(app).Dashboard = new app.Component("dashboard");
 	// Dashboard.debug = true;
 	Dashboard.createdAt      = "2.0.0";
-	Dashboard.lastUpdate     = "2.3.5";
+	Dashboard.lastUpdate     = "2.4.0";
 	Dashboard.version        = "1";
 	Dashboard.factoryExclude = true;
 	// Dashboard.loadingMsg     = "This message will display in the console when component will be loaded.";

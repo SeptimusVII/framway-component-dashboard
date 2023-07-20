@@ -14,12 +14,10 @@
 					<td class="ft-b">{{app.version}}</td>
 				</tr>
 				<tr>
-					<td class="ft-i">Debug mode</td>
-					<td class="ft-b">{{app.debug}}</td>
-				</tr>
-				<tr>
-					<td class="ft-i">Toastr</td>
-					<td class="ft-b">{{app.useToastr}}</td>
+					<td><span class="ft-i">Theme(s) loaded</span> <span class="fl-right ft-b">[{{app.themes.length}}]</span></td>
+					<td>
+						{{{themes}}}
+					</td>
 				</tr>
 				<tr>
 					<td><span class="ft-i">Component(s) loaded</span> <span class="fl-right ft-b">[{{app.components.length}}]</span></td>
@@ -28,10 +26,12 @@
 					</td>
 				</tr>
 				<tr>
-					<td><span class="ft-i">Theme(s) loaded</span> <span class="fl-right ft-b">[{{app.themes.length}}]</span></td>
-					<td>
-						{{{themes}}}
-					</td>
+					<td class="ft-i">Debug mode</td>
+					<td class="ft-b">{{app.debug}}</td>
+				</tr>
+				<tr>
+					<td class="ft-i">Toastr</td>
+					<td class="ft-b">{{app.useToastr}}</td>
 				</tr>
 			</table>
 		</div>
@@ -60,8 +60,8 @@
 						<td>Initialize framway's structure and folders. Automatically download themes and components set in config file. Set the framway in a production state</td>
 					</tr>
 					<tr>
-						<td><span class="tag copy">npm run framway toggleFiles [true/false]</span></td>
-						<td>Toggle the git tracking state of a selection of files which need to be ignored in a production environment.<br><span class="tag">true</span>= files ignored (default)<br><span class="tag">false</span>= files not ignored</td>
+						<td><span class="tag copy">npm run framway update</span></td>
+						<td>Pull the latest framway changes, update dependencies and listed components/themes</td>
 					</tr>
 				</table>
 				<h3>Theme commands</h3>
